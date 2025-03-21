@@ -21,3 +21,39 @@ print(f'Number of links: {links}')
 print(f'Number of paragraphs: {paragraphs}')
 
 #4.) Keywords 
+
+keyword = input("Enter a keyword: ").lower()
+text_content = soup.get_text().lower()
+count_keyword = text_content.count(keyword)
+print(f"The keyword {keyword} appears {count_keyword} times in the webpage!")
+
+#5.) 
+
+#6.) Longest Paragraphs
+
+paragraphs = soup.find_all('p')
+
+longest_paragraph = ""
+longest_word_count = 0
+
+for paragraph in paragraphs:
+        text = paragraph.get_text().strip()
+        word_count = len(text.split())
+
+        if word_count >= 5 and word_count > longest_word_count:
+            longest_paragraph = text
+            longest_word_count = word_count
+
+
+
+
+
+if longest_paragraph:
+    print("\nLongest Paragraph Found:\n")
+    print(longest_paragraph)
+    print(f"\nThis paragraph contains {longest_word_count} words.")
+else:
+    print("No paragraph with 5 or more words was found.")
+
+
+
