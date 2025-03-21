@@ -39,3 +39,14 @@ for word in words:
 top_5_words = sorted(word_freq.items(), key=lambda x: x[1], reverse=True)[:5]
 
 print(top_5_words)
+
+
+# 7.)
+
+import matplotlib.pyplot as plt
+labels = ['Headings', 'Links', 'Paragraphs']
+values = [headings, links, paragraphs]
+plt.bar(labels, values)
+plt.title('Group SIGMA')
+plt.ylabel('Count')
+plt.show()
