@@ -20,6 +20,7 @@ print(f'Number of headings: {headings}')
 print(f'Number of links: {links}')
 print(f'Number of paragraphs: {paragraphs}')
 
+<<<<<<< HEAD
 #4.) Keywords 
 
 keyword = input("Enter a keyword: ").lower()
@@ -57,3 +58,35 @@ else:
 
 
 
+=======
+# 4.) Keywords 
+
+
+# 5.) Word Frequency Analysis
+
+txt = soup.get_text().lower()
+words = txt.split()
+
+word_freq = {}
+
+for word in words:
+    if word in word_freq:
+        word_freq[word] += 1
+    else:
+        word_freq[word] = 1
+
+top_5_words = sorted(word_freq.items(), key=lambda x: x[1], reverse=True)[:5]
+
+print(top_5_words)
+
+
+# 7.)
+
+import matplotlib.pyplot as plt
+labels = ['Headings', 'Links', 'Paragraphs']
+values = [headings, links, paragraphs]
+plt.bar(labels, values)
+plt.title('Group SIGMA')
+plt.ylabel('Count')
+plt.show()
+>>>>>>> 0514e111bdd6b15a423b34ee02aa3716595f7846
