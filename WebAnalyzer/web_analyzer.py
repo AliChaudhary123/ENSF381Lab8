@@ -20,46 +20,12 @@ print(f'Number of headings: {headings}')
 print(f'Number of links: {links}')
 print(f'Number of paragraphs: {paragraphs}')
 
-<<<<<<< HEAD
 #4.) Keywords 
 
 keyword = input("Enter a keyword: ").lower()
 text_content = soup.get_text().lower()
 count_keyword = text_content.count(keyword)
 print(f"The keyword {keyword} appears {count_keyword} times in the webpage!")
-
-#5.) 
-
-#6.) Longest Paragraphs
-
-paragraphs = soup.find_all('p')
-
-longest_paragraph = ""
-longest_word_count = 0
-
-for paragraph in paragraphs:
-        text = paragraph.get_text().strip()
-        word_count = len(text.split())
-
-        if word_count >= 5 and word_count > longest_word_count:
-            longest_paragraph = text
-            longest_word_count = word_count
-
-
-
-
-
-if longest_paragraph:
-    print("\nLongest Paragraph Found:\n")
-    print(longest_paragraph)
-    print(f"\nThis paragraph contains {longest_word_count} words.")
-else:
-    print("No paragraph with 5 or more words was found.")
-
-
-
-=======
-# 4.) Keywords 
 
 
 # 5.) Word Frequency Analysis
@@ -77,16 +43,39 @@ for word in words:
 
 top_5_words = sorted(word_freq.items(), key=lambda x: x[1], reverse=True)[:5]
 
+
 print(top_5_words)
 
+#6.) Longest Paragraphs
+
+para = soup.find_all('p')
+
+longest_paragraph = ""
+longest_word_count = 0
+
+for paragraph in para:
+        text = paragraph.get_text().strip()
+        word_count = len(text.split())
+
+        if word_count >= 5 and word_count > longest_word_count:
+            longest_paragraph = text
+            longest_word_count = word_count
+
+
+if longest_paragraph:
+    print("\nLongest Paragraph Found:\n")
+    print(longest_paragraph)
+    print(f"\nThis paragraph contains {longest_word_count} words.")
+else:
+    print("No paragraph with 5 or more words was found.")
 
 # 7.)
 
 import matplotlib.pyplot as plt
+print(paragraphs)
 labels = ['Headings', 'Links', 'Paragraphs']
 values = [headings, links, paragraphs]
 plt.bar(labels, values)
-plt.title('Group SIGMA')
+plt.title('Group 8')
 plt.ylabel('Count')
 plt.show()
->>>>>>> 0514e111bdd6b15a423b34ee02aa3716595f7846
